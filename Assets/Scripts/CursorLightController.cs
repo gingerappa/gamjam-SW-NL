@@ -5,6 +5,7 @@ public class CursorLightController : MonoBehaviour
     public float lightDistance = 10f;
 
     void Update()
+
     {
         // Get the mouse position in world coordinates
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
