@@ -2,10 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class collect_piece : MonoBehaviour
+public class piece : MonoBehaviour
 {
     public static int piecesCollected;
     public GameObject particlePrefab;
+    private Vector3 basePos;
+    private void Awake()
+    {
+        basePos = transform.position;
+    }
+    public void Update()
+    {
+        Vector3 pos = transform.position;
+        pos.y = basePos.y + (0.2f * Mathf.Cos(Time.time * 1.5f));
+        transform.position = pos;
+    }
+    
     private void OnTriggerEnter(Collider collision)
     {
         if (gameObject.tag == "piece" && collision.gameObject.tag == "player")
