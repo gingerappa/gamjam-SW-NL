@@ -24,13 +24,13 @@ public class ClearCon : MonoBehaviour
             Win();
         }
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("Detonator"))
-    //    {
-    //        DetonatorsCollected++;
-    //    }  
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Detonator"))
+        {
+            DetonatorsCollected++;
+        }  
+    }
     void Win()
     {
         SceneManager.LoadScene("WinScene");
