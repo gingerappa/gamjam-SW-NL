@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class FirstPersonMovement : MonoBehaviour
 {
     public float speed = 5;
-   
+    public AudioSource audioSource; // Add this variable to hold the AudioSource component
+
 
     [Header("Running")]
     public bool canRun = true;
@@ -16,7 +17,8 @@ public class FirstPersonMovement : MonoBehaviour
     Rigidbody rigidbody;
     /// <summary> Functions to override movement speed. Will use the last added override. </summary>
     public List<System.Func<float>> speedOverrides = new List<System.Func<float>>();
-
+    public Text pieceCountText; // Reference to the UI text component for displaying piece count
+    private int piecesCollected = 0; // Counter for collected pieces
 
 
     void Awake()
@@ -42,5 +44,24 @@ public class FirstPersonMovement : MonoBehaviour
 
         // Apply movement.
         rigidbody.velocity = transform.rotation * new Vector3(targetVelocity.x, rigidbody.velocity.y, targetVelocity.y);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("piece"))
+        {
+            // Increment the pieces collected count
+            piecesCollected++;
+
+            // Update the UI text to display the new count
+            pieceCountText.text = piecesCollected.ToString() + "x";
+
+            // Check if the audio source is assigned
+            if (audioSource != null)
+            {
+                // Play the audio clip
+                audioSource.Play();
+            }
+        }
     }
 }
