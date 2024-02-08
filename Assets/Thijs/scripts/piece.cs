@@ -14,8 +14,11 @@ public class piece : MonoBehaviour
     public void Update()
     {
         Vector3 pos = transform.position;
-        pos.y = basePos.y + (0.2f * Mathf.Cos(Time.time * 1.5f));
+        pos.y = basePos.y + (0.2f * Mathf.Cos(Time.time * 2f));
         transform.position = pos;
+
+        transform.Rotate(0, 45 * Time.deltaTime, 0);
+
     }
     
     private void OnTriggerEnter(Collider collision)
