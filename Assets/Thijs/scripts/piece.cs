@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class piece : MonoBehaviour
 {
@@ -32,10 +33,13 @@ public class piece : MonoBehaviour
             Debug.Log("Pieces collected: " + piecesCollected);
             GameObject particle = Instantiate(particlePrefab, gameObject.transform.position, Quaternion.identity);
             particle.GetComponent<ParticleSystem>().Play();
+            if(piecesCollected >= 5)
+            {
+                SceneManager.LoadScene("WinScene");
+            }
             Destroy(particle, 1);
             Destroy(gameObject);
-
-            
         }
+
     }
 }

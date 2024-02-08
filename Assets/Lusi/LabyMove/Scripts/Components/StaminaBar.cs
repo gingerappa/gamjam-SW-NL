@@ -13,7 +13,7 @@ public class StaminaBar : MonoBehaviour
     public Color depletedColor = Color.red; // Color when stamina is depleted
 
     // Reference to the player movement script
-    public FirstPersonMovement playerMovement;
+    public move playerMovement;
 
     private bool canUseShift = true; // Flag to control Shift key usage
 

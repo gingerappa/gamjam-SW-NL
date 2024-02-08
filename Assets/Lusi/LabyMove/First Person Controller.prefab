@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f45facc01772ba47a9ae17bb7061b71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 114963311885979670}
+  character: {fileID: 0}
   groundCheck: {fileID: 114503055206606986}
   stepAudio: {fileID: 3404824665309619301}
   runningAudio: {fileID: 556619294522721544}
@@ -464,9 +464,9 @@ GameObject:
   - component: {fileID: 4207293392497186}
   - component: {fileID: 136877096903737240}
   - component: {fileID: 54063890643546284}
-  - component: {fileID: 114963311885979670}
   - component: {fileID: 114762042097486276}
   - component: {fileID: 6492556847529200939}
+  - component: {fileID: 6583574220479992978}
   m_Layer: 0
   m_Name: First Person Controller
   m_TagString: Untagged
@@ -543,22 +543,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 1
---- !u!114 &114963311885979670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1773623360729482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97fca36bd81de7c4cafce7bbf02ca611, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  canRun: 1
-  runSpeed: 9
-  runningKey: 304
 --- !u!114 &114762042097486276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,7 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 306
-  movement: {fileID: 114963311885979670}
+  movement: {fileID: 0}
   movementSpeed: 2
   headToLower: {fileID: 4490257326247362}
   crouchYHeadPosition: 1
@@ -595,6 +579,24 @@ MonoBehaviour:
   normalColor: {r: 0, g: 1, b: 0, a: 1}
   depletedColor: {r: 1, g: 0, b: 0, a: 1}
   playerMovement: {fileID: 0}
+--- !u!114 &6583574220479992978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773623360729482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c00543f1d664549a82de5c8965bf0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  audioSource: {fileID: 0}
+  canRun: 1
+  runSpeed: 9
+  runningKey: 304
+  pieceCountText: {fileID: 0}
 --- !u!1 &214802614945921149
 GameObject:
   m_ObjectHideFlags: 0
